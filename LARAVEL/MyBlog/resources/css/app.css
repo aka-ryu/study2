@@ -1,0 +1,7 @@
+.nabvar {
+    display: flex;
+}
+
+.navbar a{
+    text-decoration: none;
+}
