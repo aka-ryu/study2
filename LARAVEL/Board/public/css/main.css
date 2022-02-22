@@ -1,0 +1,47 @@
+.navbar {
+    justify-content: flex-start;
+}
+
+.home {
+    margin-right: 10px;
+}
+
+.content {
+    margin-top: 100px;
+}
+
+.user {
+    margin-left: auto;
+}
+
+.card {
+    margin-top: 20px;
+}
+
+.pagination {
+    margin-top: 20px;
+}
+
+.pagination {
+    display: flex;
+}
+
+.list-search-write {
+    display: flex;
+    margin-top: 20px;
+    margin-left: auto;
+}
+
+.write-btn {
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+
+.search-option {
+    width: 100px;
+}
+
+.tasks-content {
+    height: 400px;
+}
