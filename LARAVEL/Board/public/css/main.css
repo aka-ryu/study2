@@ -45,3 +45,20 @@
 .tasks-content {
     height: 400px;
 }
+
+.card {
+    cursor:pointer;
+}
+
+.search-result {
+    margin-top:20px;
+}
+
+.search-x {
+    padding: 200px 30%
+}
+
+.task-day {
+    display:block;
+    margin-left: auto;
+}

@@ -18,8 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/list', [TaskController::class, 'index']);
-Route::get('/list/create', 'TaskController@create');
+Route::get('/list', [TaskController::class, 'index'])->name('list.index');
+Route::get('/search', [TaskController::class, 'search'])->name('list.search');
 Route::post('/list', 'TaskController@store');
+Route::get('/detail/{task}', [TaskController::class, 'show']);
 
 Route::resource('task', TaskController::class);

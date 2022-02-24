@@ -7,7 +7,7 @@
         
         <div>
             <h3>
-                <a href="{{ route('guitars.show', ['guitar' => $guitar['id']]) }}">{{ $guitar['name'] }}</a>
+                <a href="{{ route('guitars.show', ['guitar' => $guitar['id']]) }}"> {{ $guitar['name'] }} </a>
                 <ul>
                     <li>
                         Made by : {{  $guitar['brand'] }}

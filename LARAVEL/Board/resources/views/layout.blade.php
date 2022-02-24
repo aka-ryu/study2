@@ -18,7 +18,7 @@
                     <h1 class="home"><a href="/">Home</a></h1>
                 </div>
                 <div>
-                    <h1 class="home"><a href="/">List</a></h1>
+                    <h1 class="home"><a href="/list">List</a></h1>
                 </div>
                 <div>
                     <h1><a href="/">Chat</a></h1>

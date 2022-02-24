@@ -10,18 +10,48 @@ class TaskController extends Controller
 {
     public function index() {
 
-        $tasks = DB::table('tasks')->paginate(3);
-        return view('list.index', compact('tasks'));
+        // $tasks = DB::table('tasks')->orderBy('id', 'desc')->paginate(3);
+        return view('list.index', [
+            'tasks' => DB::table('tasks')->orderBy('id', 'desc')->paginate(3)
+        ]);
     }
 
     public function create() {
-        return view('list.create');
     }
 
     public function store(Request $request) {
-        $task = $request;
-        Task::create($task);
+        $task = new Task([
+            'title' => $request->title,
+            'content' => $request->content,
+            'writer' => $request->writer,
+        ]);
+       
+        $task->save();
 
-        return redirect()->route('list.index');
+        $tasks = DB::table('tasks')->orderBy('id', 'desc')->paginate(3);
+        return view('list.index', compact('tasks'));
+
+    }
+
+    public function search(Request $request) {
+        $type = $request->searchOption;
+        $word = $request->search;
+
+        
+        if($type === 'title')
+        $tasks = DB::table('tasks')->where('title', $word)->paginate(3);
+
+        elseif($type ==='content')
+        $tasks = DB::table('tasks')->where('content', $word)->paginate(3);
+
+        else
+        $tasks = DB::table('tasks')->where('writer', $word)->paginate(3);
+
+        return view('/list.search', compact('tasks', 'word'));
+    }
+
+    public function show(Task $task) {
+       
+        return view('/list.detail', compact('task'));
     }
 }
