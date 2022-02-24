@@ -62,3 +62,26 @@
     display:block;
     margin-left: auto;
 }
+
+.detail-writer {
+    width: 30%;
+}
+
+.tasks-content {
+    height: auto;
+    min-height: 300px;
+}
+
+.detail-top {
+    display: flex;
+}
+
+.detail-btn {
+    margin-top: auto;
+    margin-left: auto;
+}
+
+.edit-content {
+    height: auto;
+    min-height: 300px;
+}

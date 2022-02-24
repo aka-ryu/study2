@@ -12,7 +12,7 @@
             <h2>#{{ $task->id }}</h3>
             <h3 class="card-title">{{ $task->title }}</h3>
             <h3 class="card-title mb-2 text-muted">작성자 : {{ $task->writer }} </h3>
-            <h3 class="card-title mb-2 text-muted">등록시간 : {{ $task->created_at }}</h3>
+            <h3 class="card-title mb-2 text-muted">등록일 : {{ $task->created_at }}</h3>
             <a href="#" class="card-link">자세히 보기</a>
         </div>
         
