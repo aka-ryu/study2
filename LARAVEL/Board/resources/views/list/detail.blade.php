@@ -35,12 +35,13 @@
         정말 삭제하시겠습니까?
       </div>
 
-      <form method="POST" action="">
-      
+      <form method="POST" id="delete" action="/detail/{{$task->id}}">
+        @csrf
+        @method('delete')
       </form>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
-        <button type="button" class="btn btn-danger">삭제</button>
+        <button type="submit" form="delete" class="btn btn-danger">삭제</button>
       </div>
     </div>
   </div>

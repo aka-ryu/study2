@@ -11,6 +11,7 @@
       
       </div>
         <form method="POST" action="{{ route('tasks.update', ['task'=> $task->id]) }}">
+        @csrf
         @method('PUT')
         <input type="text" value="{{$task->id}}" name="id" style="display:none">
             <div class="mb-3">
@@ -23,7 +24,7 @@
               <textarea type="text" id="detail-content" rows="20" cols="50" class="form-control edit-content"  name="content"></textarea>
             </div>
           <button class="btn btn-success" onclick="history.back()">취소</button>
-          <button type="submit" class="btn btn-warning" onclick="location.href='/edit/{{$task->id}}'" >수정</button>
+          <button type="submit" class="btn btn-warning"  >수정</button>
       </form>
           
 

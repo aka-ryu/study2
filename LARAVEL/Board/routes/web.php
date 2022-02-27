@@ -20,10 +20,11 @@ Route::get('/', function () {
 
 Route::get('/list', [TaskController::class, 'index'])->name('list.index');
 Route::get('/search', [TaskController::class, 'search'])->name('list.search');
-Route::post('/list', 'TaskController@store')->name('task.store');
+Route::post('/list', [TaskController::class, 'store'])->name('task.store');
 Route::get('/detail/{task}', [TaskController::class, 'show']);
 Route::get('/edit/{task}', [TaskController::class, 'edit']);
-
+Route::put('/detail/{task}', [TaskController::class, 'update'])->name('task.update');
+Route::delete('/detail/{task}', [TaskController::class, 'destroy'])->name('task.destroy');
 Route::resource('tasks', TaskController::class);
 
 

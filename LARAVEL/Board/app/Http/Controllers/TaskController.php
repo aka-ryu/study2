@@ -60,12 +60,19 @@ class TaskController extends Controller
         return view('/list.edit', compact('task'));
     }
 
-    public function update(Task $task) {
+    public function update(Request $request, Task $task) {
 
         DB::table('tasks')
             ->where('id', $request->id)
             ->update(['title'=>$request->title, 'content'=>$request->content]);
 
             return redirect()->route('tasks.show', $task->id);
+    }
+
+    public function destroy(Task $task) {
+        
+        $task->delete();
+
+        return redirect('/list');
     }
 }
